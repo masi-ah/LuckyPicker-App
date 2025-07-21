@@ -1,13 +1,17 @@
 import { useState } from 'react'
+import UserForm from './components/UserForm'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
+  const [users, setUsers] = useState([]);
+  const handleSubmit = (user) => {
+    setUsers((prevUsers) => [...prevUsers,user]);
+  };
   return (
-    <>
-    
-    </>
+    <div>
+      <h1>User Registration</h1>
+      <UserForm AddUser={handleSubmit}/>
+    </div>
   )
 }
 
