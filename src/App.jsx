@@ -24,7 +24,9 @@ const App = () => {
       <h1 className='text-3xl font-bold mb-6 text-purple-800'>User Registration</h1>
       <UserForm AddUser={handleAddUser}/>
       <div className='w-full max-w-md mt-8'>
-        <h2 className='text-xl font-semibold mb-4 text-purple-800'>User List:</h2>
+        {state.users.length > 0 && (
+       <h2 className='text-xl font-semibold mb-4 text-purple-800'>User List:</h2>
+        )}
         <ul className='space-y-2'>
           {state.users.map((user, index) =>(
             <li  className='bg-white shadow-sm rounded-md px-4 py-2 border border-purple-200'  key={index}>
